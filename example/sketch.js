@@ -1,50 +1,58 @@
 /*
-   Description: Lesson 4 - If Statements example
+   Description: Custom Variables
    Author: Mr. Kowalczewski
-   Date of last edit: September 23, 2026
+   Date of last edit: September 19, 2025
 */
 
-let xValue = 100;
-let lineThickness = 50;
+// global variables (outside of { })
+let lineX = 100;
+let lineWeight = 50;
+let title = "Mr K's Program";
+let titleX = 250;
 
-let name = "Mr K";
 
 function setup() {
   createCanvas(600, 600);
 }
 
+
 function draw() {
-  // re-draw the background at each repetition
   background(255);
-  console.log('Hello There');
-  // ----- Text -----
-  textSize(20);
-  text("Growing Line", 300, 200);
-  text("Created by: " + name, 300, 250);
+  // drawing a simple line
+  strokeWeight(lineWeight);
+  line(0, 300, lineX, 300);
 
-  //text("xValue = " + xValue, 300, 400);
-
-  console.log("xValue = " + xValue);
-
-  // ----- Growing Line -----
-  strokeWeight(lineThickness);
-  line(0, 300, xValue, 300);
-
-  // xValue increases by one every time draw() loops
-  xValue += 1;
-
-  // lineThickness decreases by 0.1
-  lineThickness = lineThickness - 0.1;
-
-  // ----- if / else if / else -----
-  // two conditions combined with && (both must be true)
-  if (xValue > 300 && xValue < 400) {
+  if(lineX > 200 && lineX < 300){
     stroke(255, 0, 0);
   }
-  else if (xValue < 600) {
-    circle(width / 2, height / 2, 100, 100);
+  else if(lineX > 300 && lineX < 500){
+    stroke(0, 255, 0);
   }
-  else {
+  else{
     stroke(0);
   }
+
+  // if(keyIsPressed){
+  //   circle(100, 100, 200, 200);
+  // }
+
+  if(key == 'a'){
+    circle(100, 100, 200, 200);
+  }
+
+
+  // modifying the variables - draw() loops around!
+  lineX = lineX + 1;
+  lineWeight -= 0.1;
+
+  fill(0, 255, 0);
+  textSize(30);
+  text(title, titleX, 100); // draws the string data (either a variable/constant or direct value) at coordinates (x, y)
+  titleX -= 1;
+
+
+  text("Hello", 250, 150);
+  //text("lineX= " + lineX  , 250, 200);
+  console.log("lineX = " + lineX);
+
 }

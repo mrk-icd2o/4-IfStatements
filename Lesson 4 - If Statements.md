@@ -25,7 +25,7 @@ Before we get into if statements we need comparison operators. Think about how y
 - `>` and `<` check if one value is greater or less than the other.
 - `>=` and `<=` check if one value is greater than or equal to, or less than or equal to.
 
-All of these comparisons, with values on either side, return `true` if true and `false` otherwise.
+All of these comparisons, with values on either side, return `true` if true and `false` otherwise - they become `boolean` values.
 
 ## If Statements
 
@@ -60,7 +60,7 @@ if (teacherName == "Ms Danish"){
 The code below in `example/sketch.js` is what we finished with in the Variables and Constants lesson. We will add some code to change the colour of the line after it reaches a certain point:
 
 ```javascript
-if (xValue > 300){
+if (lineX > 300){
   stroke(255, 0, 0);
 }
 ```
@@ -100,7 +100,7 @@ else{
 Finally we have `else if`, used to add additional conditions after the first ("otherwise if"). You can have as many `else if` conditions as you want after an `if` and before an `else`. When you do this, only one condition can be true.
 
 ```javascript
-let score = 45;
+let score = 65;
 
 // Check grade - ORDER MATTERS!
 if (score >= 80) {
